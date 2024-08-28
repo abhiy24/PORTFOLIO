@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset some basic elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .header .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header .nav ul li {
+            margin-left: 20px;
+        }
+
+        .header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .header .nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #333;
+            color: #ffd700;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 18px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+
+        .skills h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .skill-item img, .skill-item i {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .skill-item img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .skill-item p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 60px 0;
+        }
+
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .project-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-item {
+            flex: 1;
+            min-width: 300px;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .project-item h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .project-item p {
+            font-size: 16px;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .contact-form button {
+            background: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .contact-form button:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Abhijit's PORTFOLIO</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2 class="hero-title">Hi, I'm Abhijit</h2>
+            <p class="hero-description">A passionate Front-End Developer from Mumbai</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I'm Abhijit Yadav, a passionate Front-End Web Developer with a keen eye for design and a love for creating seamless user experiences. I specialize in crafting responsive, visually appealing websites using modern web technologies like HTML, CSS, and JavaScript. Whether it's bringing a static design to life or optimizing web performance, I thrive on turning ideas into interactive, user-friendly digital solutions.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java">
+                    <p>Java</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js">
+                    <p>Node.js</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/color/48/000000/flutter.png" alt="Flutter">
+                    <p>Flutter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <!-- Example Project -->
+                <div class="project-item">
+                    <img src="primage.png" alt="Project 1">
+                    <h3>GYM Website</h3>
+                    <p>It was an end solution for everyone. From the person who just wants to stay fit to the person who wants to compete in sports like Powerlifting, Weightlifting & Bodybuilding.</p>
+                </div>
+                <div class="project-item">
+                    <img src="primage2.png" alt="Project 2">
+                    <h3>Business Website</h3>
+                    <p>The website was related to my father's pest control business. It makes it easy to check the details and book the service based on what customers want.</p>
+                </div>
+                <!-- Add more project items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to drop me a message below.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> +91 99879 06225</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:abhijit@example.com">yadavabhijit18@gmail.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/abhijit-yadav-b23b92229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/abhiy24" target="_blank">GitHub</a></p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Abhijit Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
